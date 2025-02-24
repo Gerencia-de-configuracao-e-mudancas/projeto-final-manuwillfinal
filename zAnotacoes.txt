@@ -1,0 +1,74 @@
+index.html {
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RPG Character Creator</title>
+
+        <!-- Linkando arquivos -->
+        <link rel="stylesheet" href="index.css">
+
+    </head>
+    <body>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link active">Tela Inicial</a></li>
+                <li class="nav-item"><a href="creation.html" class="nav-link">Criar Personagem</a></li>
+                <li class="nav-item"><a href="handbook.html" class="nav-link">Manual</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-container">
+            <header class="header">
+                <h1 class="title">Criador de Personagens RPG</h1>
+            </header>
+
+            <section class="characters-container" id="charactersGrid">
+                <!-- Os cards de personagens serão inseridos aqui dinamicamente via JavaScript -->
+                <div class="characters-placeholder">
+                    <p>Seus personagens aparecerão aqui</p>
+                </div>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+    </html>
+}
+
+creation.html {
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Criar Personagem - RPG Character Creator</title>
+
+        <!-- Linkando arquivos -->
+        <link rel="stylesheet" href="creation.css">
+        
+    </head>
+    <body>
+        <nav class="main-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="index.html" class="nav-link">Tela Inicial</a></li>
+                <li class="nav-item"><a href="creation.html" class="nav-link active">Criar Personagem</a></li>
+                <li class="nav-item"><a href="handbook.html" class="nav-link">Manual</a></li>
+            </ul>
+        </nav>
+
+        <main class="main-container">
+            <header class="header">
+                <h1 class="title">Criar Novo Personagem</h1>
+            </header>
+
+            <!-- Aqui virá o formulário de criação de personagem -->
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+    </html>
+}
+
+faça, criando arquivos creation.css e index.css, um css de tema escuro e com a cor de destaque sendo roxo. use um arquivo cores.css com root para definir as cores mais usadas como variáveis para serem usadas mais facilmente de forma padrão entre os arquivos css específicos de cada página
