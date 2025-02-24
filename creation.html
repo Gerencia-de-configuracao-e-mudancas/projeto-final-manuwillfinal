@@ -23,7 +23,130 @@
             <h1 class="title">Criar Novo Personagem</h1>
         </header>
 
-        <!-- Aqui virá o formulário de criação de personagem -->
+        <form id="characterForm" class="character-form">
+            <!-- Informações Básicas -->
+            <section class="form-section">
+                <h2>🎭 Informações Básicas</h2>
+                <div class="form-group">
+                    <label for="charName">Nome 🏷️</label>
+                    <input type="text" id="charName" name="charName" required>
+                </div>
+                <div class="form-group">
+                    <label for="charRace">Raça/Espécie 🐉</label>
+                    <select id="charRace" name="charRace" required>
+                        <option value="">Selecione uma raça</option>
+                        <option value="humano">Humano</option>
+                        <option value="elfo">Elfo</option>
+                        <option value="anao">Anão</option>
+                        <option value="orc">Orc</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="charClass">Classe/Profissão ⚔️</label>
+                    <select id="charClass" name="charClass" required>
+                        <option value="">Selecione uma classe</option>
+                        <option value="guerreiro">Guerreiro</option>
+                        <option value="mago">Mago</option>
+                        <option value="ladino">Ladino</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="charAge">Idade 📅</label>
+                    <input type="number" id="charAge" name="charAge" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="charGender">Gênero/Identidade 🚻</label>
+                    <input type="text" id="charGender" name="charGender">
+                </div>
+                <div class="form-group">
+                    <label for="charHeight">Altura (cm) ⚖️</label>
+                    <input type="number" id="charHeight" name="charHeight" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="charWeight">Peso (kg) ⚖️</label>
+                    <input type="number" id="charWeight" name="charWeight" min="1">
+                </div>
+            </section>
+
+            <!-- Atributos -->
+            <section class="form-section">
+                <h2>🛡️ Atributos</h2>
+                <div class="attributes-grid">
+                    <div class="form-group">
+                        <label for="attrStr">Força 💪</label>
+                        <input type="number" id="attrStr" name="attrStr" min="1" max="20" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="attrDex">Destreza 🏹</label>
+                        <input type="number" id="attrDex" name="attrDex" min="1" max="20" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="attrCon">Constituição ❤️</label>
+                        <input type="number" id="attrCon" name="attrCon" min="1" max="20" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="attrInt">Inteligência 📚</label>
+                        <input type="number" id="attrInt" name="attrInt" min="1" max="20" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="attrWis">Sabedoria 🧘‍♂️</label>
+                        <input type="number" id="attrWis" name="attrWis" min="1" max="20" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="attrCha">Carisma 🗣️</label>
+                        <input type="number" id="attrCha" name="attrCha" min="1" max="20" required>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Combate -->
+            <section class="form-section">
+                <h2>⚔️ Combate e Resistências</h2>
+                <div class="form-group">
+                    <label for="charHP">Pontos de Vida ❤️</label>
+                    <input type="number" id="charHP" name="charHP" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="charMP">Pontos de Mana 🔵</label>
+                    <input type="number" id="charMP" name="charMP" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="charDef">Defesa 🛡️</label>
+                    <input type="number" id="charDef" name="charDef" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="charInit">Iniciativa ⚡</label>
+                    <input type="number" id="charInit" name="charInit" min="0" required>
+                </div>
+            </section>
+
+            <!-- História -->
+            <section class="form-section">
+                <h2>📜 História e Personalidade</h2>
+                <div class="form-group">
+                    <label for="charBackground">História do Personagem 📖</label>
+                    <textarea id="charBackground" name="charBackground" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="charAlignment">Alinhamento Moral ⚖️</label>
+                    <select id="charAlignment" name="charAlignment">
+                        <option value="bom">Bom</option>
+                        <option value="neutro">Neutro</option>
+                        <option value="maligno">Maligno</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="charMotivation">Motivação/Objetivo 🎯</label>
+                    <textarea id="charMotivation" name="charMotivation" rows="2"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="charWeaknesses">Fraquezas e Medos 😨</label>
+                    <textarea id="charWeaknesses" name="charWeaknesses" rows="2"></textarea>
+                </div>
+            </section>
+
+            <button type="submit" class="btn btn-primary">Criar Personagem</button>
+        </form>
     </main>
 
     <script src="script.js"></script>
