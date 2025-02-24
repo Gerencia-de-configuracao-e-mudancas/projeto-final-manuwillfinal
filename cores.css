@@ -1,0 +1,8 @@
+:root {
+    --cor-fundo: #121212;
+    --cor-texto: #e0e0e0;
+    --cor-primaria: #7b1fa2; /* Roxo principal */
+    --cor-secundaria: #9c27b0; /* Roxo mais vibrante */
+    --cor-hover: #ab47bc; /* Efeito ao passar o mouse */
+    --cor-borda: #333;
+}

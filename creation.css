@@ -1,0 +1,106 @@
+@import url('cores.css');
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estilização geral */
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* Navegação */
+.main-nav {
+    background: var(--cor-primaria);
+    padding: 1rem;
+    text-align: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.nav-item {
+    display: inline;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: var(--cor-secundaria);
+}
+
+/* Container principal */
+.main-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Título */
+.title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Formulário de criação de personagem */
+.character-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.character-form label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.character-form input,
+.character-form select,
+.character-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 5px;
+    background: #2d2d2d;
+    color: white;
+}
+
+/* Botão de criação */
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background: var(--cor-secundaria);
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: var(--cor-hover);
+    color: #fff;
+}
