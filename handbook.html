@@ -4,25 +4,285 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual - RPG Character Creator</title>
-    <link rel="stylesheet" href="styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Linkando arquivos -->
+    <link rel="stylesheet" href="handbook.css">
 </head>
 <body>
     <nav class="main-nav">
         <ul class="nav-list">
-            <li class="nav-item"><a href="index.html" class="nav-link">Tela Inicial</a></li>
-            <li class="nav-item"><a href="creation.html" class="nav-link">Criar Personagem</a></li>
-            <li class="nav-item"><a href="handbook.html" class="nav-link active">Manual</a></li>
+            <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Tela Inicial</a></li>
+            <li class="nav-item"><a href="creation.html" class="nav-link"><i class="fas fa-plus-circle"></i> Criar Personagem</a></li>
+            <li class="nav-item"><a href="handbook.html" class="nav-link active"><i class="fas fa-book"></i> Manual</a></li>
         </ul>
     </nav>
 
     <main class="main-container">
-        <header class="header">
+        <header class="header text-center mb-4">
             <h1 class="title">Manual do Usuário</h1>
         </header>
 
-        <!-- Aqui virá o conteúdo do manual -->
+        <div class="manual-content">
+            <!-- Introdução -->
+            <section class="manual-section">
+                <h2><i class="fas fa-scroll"></i> Introdução</h2>
+                <p>Bem-vindo ao RPG Character Creator! Este manual irá guiá-lo através de todas as funcionalidades do nosso criador de personagens.</p>
+                
+                <div class="tip-box">
+                    <p><i class="fas fa-lightbulb"></i> <strong>Dica:</strong> Leia este manual antes de criar seu primeiro personagem para entender melhor todas as opções disponíveis.</p>
+                </div>
+            </section>
+
+            <!-- Criação de Personagem -->
+            <section class="manual-section">
+                <h2><i class="fas fa-user-plus"></i> Criação de Personagem</h2>
+                
+                <h3>Informações Básicas</h3>
+                <p>Ao criar um personagem, comece preenchendo as informações básicas:</p>
+                <ul>
+                    <li><strong>Nome:</strong> Escolha um nome apropriado para seu personagem</li>
+                    <li><strong>Raça:</strong> Selecione entre Humano, Elfo, Anão ou Orc</li>
+                    <li><strong>Classe:</strong> Escolha entre Guerreiro, Mago ou Ladino</li>
+                </ul>
+
+                <div class="example-box">
+                    <p><i class="fas fa-info-circle"></i> <strong>Exemplo:</strong> Um guerreiro anão chamado "Thorin" seria uma combinação clássica para iniciantes.</p>
+                </div>
+            </section>
+
+            <!-- Atributos -->
+            <section class="manual-section">
+                <h2><i class="fas fa-dice-d20"></i> Atributos e Testes</h2>
+                
+                <div class="info-box mb-4">
+                    <h3>Como Funciona o Bônus de Atributo?</h3>
+                    <p>O bônus (ou penalidade) de cada atributo é calculado pela fórmula: <code>(valor - 10) ÷ 2</code>, arredondando para baixo.</p>
+                    
+                    <div class="bonus-table">
+                        <h4>Tabela de Bônus por Valor de Atributo:</h4>
+                        <table class="table table-dark table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Valor do Atributo</th>
+                                    <th>Bônus/Penalidade</th>
+                                    <th>Exemplo de Uso</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>-5</td>
+                                    <td>Extremamente fraco/limitado</td>
+                                </tr>
+                                <tr>
+                                    <td>2-3</td>
+                                    <td>-4</td>
+                                    <td>Severamente prejudicado</td>
+                                </tr>
+                                <tr>
+                                    <td>4-5</td>
+                                    <td>-3</td>
+                                    <td>Muito abaixo da média</td>
+                                </tr>
+                                <tr>
+                                    <td>6-7</td>
+                                    <td>-2</td>
+                                    <td>Abaixo da média</td>
+                                </tr>
+                                <tr>
+                                    <td>8-9</td>
+                                    <td>-1</td>
+                                    <td>Ligeiramente abaixo da média</td>
+                                </tr>
+                                <tr>
+                                    <td>10-11</td>
+                                    <td>+0</td>
+                                    <td>Média/Normal</td>
+                                </tr>
+                                <tr>
+                                    <td>12-13</td>
+                                    <td>+1</td>
+                                    <td>Ligeiramente acima da média</td>
+                                </tr>
+                                <tr>
+                                    <td>14-15</td>
+                                    <td>+2</td>
+                                    <td>Acima da média</td>
+                                </tr>
+                                <tr>
+                                    <td>16-17</td>
+                                    <td>+3</td>
+                                    <td>Muito acima da média</td>
+                                </tr>
+                                <tr>
+                                    <td>18-19</td>
+                                    <td>+4</td>
+                                    <td>Excepcional</td>
+                                </tr>
+                                <tr>
+                                    <td>20</td>
+                                    <td>+5</td>
+                                    <td>Máximo natural</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="example-box mt-4">
+                        <h4>Como Fazer um Teste de Atributo:</h4>
+                        <ol>
+                            <li>Clique no atributo desejado no card do personagem</li>
+                            <li>O sistema rolará automaticamente 1d20 (um dado de 20 faces)</li>
+                            <li>O bônus do atributo será somado ao resultado do d20</li>
+                            <li>O resultado final será: d20 + bônus do atributo</li>
+                        </ol>
+
+                        <div class="example-calculation">
+                            <p><strong>Exemplo:</strong></p>
+                            <ul>
+                                <li>Força 16 (bônus +3)</li>
+                                <li>Rolagem do d20: 15</li>
+                                <li>Resultado final: 15 + 3 = 18</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="attribute-explanation">
+                    <div class="attribute-card">
+                        <div class="attribute-icon">💪</div>
+                        <div>
+                            <h3>Força</h3>
+                            <p>Determina o poder físico e capacidade de carregar peso</p>
+                        </div>
+                    </div>
+                    <div class="attribute-card">
+                        <div class="attribute-icon">🏹</div>
+                        <div>
+                            <h3>Destreza</h3>
+                            <p>Afeta a agilidade e precisão</p>
+                        </div>
+                    </div>
+                    <div class="attribute-card">
+                        <div class="attribute-icon">❤️</div>
+                        <div>
+                            <h3>Constituição</h3>
+                            <p>Define a saúde e resistência física</p>
+                        </div>
+                    </div>
+                    <div class="attribute-card">
+                        <div class="attribute-icon">📚</div>
+                        <div>
+                            <h3>Inteligência</h3>
+                            <p>Representa o conhecimento e raciocínio</p>
+                        </div>
+                    </div>
+                    <div class="attribute-card">
+                        <div class="attribute-icon">🧘‍♂️</div>
+                        <div>
+                            <h3>Sabedoria</h3>
+                            <p>Indica a intuição e percepção</p>
+                        </div>
+                    </div>
+                    <div class="attribute-card">
+                        <div class="attribute-icon">🗣️</div>
+                        <div>
+                            <h3>Carisma</h3>
+                            <p>Determina a força de personalidade</p>
+                        </div>
+                    </div>
+                </div>
+
+                <style>
+                    .info-box {
+                        background: rgba(44, 62, 80, 0.8);
+                        padding: 2rem;
+                        border-radius: 8px;
+                        margin: 1rem 0;
+                    }
+
+                    .bonus-table {
+                        margin: 1.5rem 0;
+                    }
+
+                    .table {
+                        background: rgba(52, 73, 94, 0.8);
+                        border-radius: 8px;
+                        overflow: hidden;
+                    }
+
+                    .table th, .table td {
+                        padding: 0.75rem;
+                        border-color: rgba(255,255,255,0.1);
+                    }
+
+                    .example-calculation {
+                        background: rgba(52, 73, 94, 0.5);
+                        padding: 1rem;
+                        border-radius: 6px;
+                        margin-top: 1rem;
+                    }
+
+                    .example-box {
+                        background: rgba(52, 73, 94, 0.3);
+                        padding: 1.5rem;
+                        border-radius: 6px;
+                    }
+
+                    code {
+                        background: rgba(0,0,0,0.2);
+                        padding: 0.2rem 0.4rem;
+                        border-radius: 4px;
+                        color: #e74c3c;
+                    }
+                </style>
+
+                <div class="warning-box">
+                    <p><i class="fas fa-exclamation-triangle"></i> <strong>Atenção:</strong> Os atributos devem estar entre 1 e 20, sendo 10 o valor médio para um personagem comum.</p>
+                </div>
+            </section>
+
+            <!-- Combate -->
+            <section class="manual-section">
+                <h2><i class="fas fa-sword"></i> Sistema de Combate</h2>
+                
+                <h3>Estatísticas de Combate</h3>
+                <ul>
+                    <li><strong>Pontos de Vida (PV):</strong> Quantidade de dano que seu personagem pode suportar</li>
+                    <li><strong>Pontos de Mana (PM):</strong> Energia mágica para conjurar feitiços</li>
+                    <li><strong>Defesa:</strong> Capacidade de evitar danos</li>
+                    <li><strong>Iniciativa:</strong> Determina a ordem de ação em combate</li>
+                </ul>
+
+                <div class="tip-box">
+                    <p><i class="fas fa-shield-alt"></i> <strong>Dica de Combate:</strong> Balanceie bem seus pontos entre ataque e defesa para criar um personagem mais versátil.</p>
+                </div>
+            </section>
+
+            <!-- História -->
+            <section class="manual-section">
+                <h2><i class="fas fa-book-open"></i> Desenvolvimento da História</h2>
+                
+                <h3>Elementos Narrativos</h3>
+                <p>Uma boa história de personagem inclui:</p>
+                <ul>
+                    <li>Background detalhado</li>
+                    <li>Motivações claras</li>
+                    <li>Objetivos definidos</li>
+                    <li>Fraquezas e medos</li>
+                </ul>
+
+                <div class="example-box">
+                    <p><i class="fas fa-quote-right"></i> <strong>Exemplo de Background:</strong> "Um jovem mago que perdeu sua família para um dragão e agora busca conhecimento mágico para se vingar."</p>
+                </div>
+            </section>
+        </div>
     </main>
 
-    <script src="script.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
