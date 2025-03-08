@@ -1,64 +1,5 @@
 @import url('cores.css');
-
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Estilização geral */
-body {
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-}
-
-/* Navegação */
-.main-nav {
-    background: var(--cor-primaria);
-    padding: 1rem;
-    text-align: center;
-}
-
-.nav-list {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.nav-item {
-    display: inline;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: var(--cor-texto);
-    font-size: 1.2rem;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background 0.3s;
-}
-
-.nav-link:hover,
-.nav-link.active {
-    background: var(--cor-secundaria);
-}
-
-/* Container principal */
-.main-container {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Título */
-.title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
+@import url('index.css');
 
 /* Formulário de criação de personagem */
 .character-form {
@@ -66,41 +7,109 @@ body {
     padding: 20px;
     border-radius: 8px;
     text-align: left;
+    margin-top: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-section {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.form-section h2 {
+    color: var(--cor-texto);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
 }
 
 .character-form label {
     display: block;
-    font-weight: bold;
-    margin-top: 10px;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--cor-texto);
 }
 
 .character-form input,
-.character-form select,
 .character-form textarea {
     width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid var(--cor-secundaria);
-    border-radius: 5px;
-    background: #2d2d2d;
-    color: white;
-}
-
-/* Botão de criação */
-.submit-btn {
-    width: 100%;
-    padding: 10px;
-    margin-top: 15px;
-    background: var(--cor-secundaria);
-    border: none;
-    color: white;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--cor-texto);
     font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
 }
 
-.submit-btn:hover {
-    background: var(--cor-hover);
-    color: #fff;
+/* Estilo específico para selects */
+.character-form select {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    background: #2c3e50;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Estilo para as opções do select */
+.character-form select option {
+    background: #2c3e50;
+    color: #ffffff;
+    padding: 0.8rem;
+}
+
+/* Estilo para o select quando aberto */
+.character-form select:focus {
+    outline: none;
+    border-color: var(--cor-secundaria);
+    background: #34495e;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.character-form input:focus,
+.character-form textarea:focus {
+    outline: none;
+    border-color: var(--cor-secundaria);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.character-form input:hover,
+.character-form select:hover,
+.character-form textarea:hover {
+    background: rgba(255, 255, 255, 0.07);
+}
+
+/* Estilo para a opção placeholder do select */
+.character-form select option[value=""] {
+    color: #95a5a6;
+}
+
+.attributes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .attributes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .attributes-grid {
+        grid-template-columns: 1fr;
+    }
 }
