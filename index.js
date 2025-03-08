@@ -22,6 +22,68 @@ function getClassColor(classe) {
     return cores[classe.toLowerCase()] || cores.default;
 }
 
+// Função para rolar um d20
+function rolarD20() {
+    return Math.floor(Math.random() * 20) + 1;
+}
+
+// Função para criar o container de toasts se não existir
+function criarToastContainer() {
+    let container = document.querySelector('.dice-toast-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.className = 'dice-toast-container';
+        document.body.appendChild(container);
+    }
+    return container;
+}
+
+// Função para mostrar o resultado da rolagem
+function mostrarRolagem(atributo, valor, modificador) {
+    const container = criarToastContainer();
+    const d20Result = rolarD20();
+    const total = d20Result + modificador;
+    
+    const toast = document.createElement('div');
+    toast.className = 'dice-toast';
+    toast.innerHTML = `
+        <div class="dice-icon">
+            <i class="fas fa-dice-d20"></i>
+        </div>
+        <div class="dice-content">
+            <div class="dice-title">
+                Teste de ${atributo}
+                <small class="dice-details">Valor: ${valor}</small>
+            </div>
+            <div class="dice-result">
+                <span class="dice-total">${total}</span>
+                <span class="dice-details">
+                    = ${d20Result} (d20) 
+                    <span class="dice-modifier">${modificador >= 0 ? '+' + modificador : modificador}</span>
+                </span>
+            </div>
+        </div>
+    `;
+
+    container.appendChild(toast);
+    
+    // Trigger reflow para iniciar a animação
+    void toast.offsetWidth;
+    
+    // Adiciona a classe show para animar a entrada
+    toast.classList.add('show');
+    
+    // Anima o ícone do dado
+    const diceIcon = toast.querySelector('.dice-icon i');
+    diceIcon.classList.add('rolling');
+    
+    // Remove o toast após 4 segundos
+    setTimeout(() => {
+        toast.style.transform = 'translateX(120%)';
+        setTimeout(() => toast.remove(), 300);
+    }, 4000);
+}
+
 // Função para carregar e exibir os personagens
 function loadCharacters() {
     const characters = JSON.parse(localStorage.getItem('characters') || '[]');
@@ -106,6 +168,16 @@ function loadCharacters() {
             </div>
         </div>
     `).join('');
+
+    // Adiciona event listeners para os atributos
+    document.querySelectorAll('.attribute').forEach(attribute => {
+        attribute.addEventListener('click', function() {
+            const atributo = this.dataset.attribute;
+            const valor = parseInt(this.dataset.value);
+            const modificador = parseInt(this.dataset.mod);
+            mostrarRolagem(atributo, valor, modificador);
+        });
+    });
 }
 
 // Função para excluir um personagem
@@ -350,6 +422,7 @@ window.saveCharacterEdit = function(index) {
     // Mostra mensagem de sucesso
     const alertDiv = document.createElement('div');
     alertDiv.className = 'alert alert-success alert-dismissible fade show';
+    alertDiv.role = 'alert';
     alertDiv.innerHTML = `
         <strong>Sucesso!</strong> Personagem atualizado com sucesso.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
