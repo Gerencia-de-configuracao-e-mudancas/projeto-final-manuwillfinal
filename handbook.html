@@ -12,32 +12,32 @@
     <link rel="stylesheet" href="handbook.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html"><i class="fas fa-home"></i> Tela Inicial</a></li>
-            <li><a href="creation.html"><i class="fas fa-plus-circle"></i> Criar Personagem</a></li>
-            <li><a href="handbook.html"><i class="fas fa-book"></i> Manual</a></li>
+    <nav class="main-nav">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Tela Inicial</a></li>
+            <li class="nav-item"><a href="creation.html" class="nav-link"><i class="fas fa-plus-circle"></i> Criar Personagem</a></li>
+            <li class="nav-item"><a href="handbook.html" class="nav-link active"><i class="fas fa-book"></i> Manual</a></li>
         </ul>
     </nav>
 
-    <main>
-        <header>
-            <h1>Manual do Usuário</h1>
+    <main class="main-container">
+        <header class="header text-center mb-4">
+            <h1 class="title">Manual do Usuário</h1>
         </header>
 
-        <div>
+        <div class="manual-content">
             <!-- Introdução -->
-            <section>
+            <section class="manual-section">
                 <h2><i class="fas fa-scroll"></i> Introdução</h2>
                 <p>Bem-vindo ao RPG Character Creator! Este manual irá guiá-lo através de todas as funcionalidades do nosso criador de personagens.</p>
                 
-                <div>
+                <div class="tip-box">
                     <p><i class="fas fa-lightbulb"></i> <strong>Dica:</strong> Leia este manual antes de criar seu primeiro personagem para entender melhor todas as opções disponíveis.</p>
                 </div>
             </section>
 
             <!-- Criação de Personagem -->
-            <section>
+            <section class="manual-section">
                 <h2><i class="fas fa-user-plus"></i> Criação de Personagem</h2>
                 
                 <h3>Informações Básicas</h3>
@@ -48,22 +48,22 @@
                     <li><strong>Classe:</strong> Escolha entre Guerreiro, Mago ou Ladino</li>
                 </ul>
 
-                <div>
+                <div class="example-box">
                     <p><i class="fas fa-info-circle"></i> <strong>Exemplo:</strong> Um guerreiro anão chamado "Thorin" seria uma combinação clássica para iniciantes.</p>
                 </div>
             </section>
 
             <!-- Atributos -->
-            <section>
+            <section class="manual-section">
                 <h2><i class="fas fa-dice-d20"></i> Atributos e Testes</h2>
                 
-                <div>
+                <div class="info-box mb-4">
                     <h3>Como Funciona o Bônus de Atributo?</h3>
                     <p>O bônus (ou penalidade) de cada atributo é calculado pela fórmula: <code>(valor - 10) ÷ 2</code>, arredondando para baixo.</p>
                     
-                    <div>
+                    <div class="bonus-table">
                         <h4>Tabela de Bônus por Valor de Atributo:</h4>
-                        <table>
+                        <table class="table table-dark table-hover">
                             <thead>
                                 <tr>
                                     <th>Valor do Atributo</th>
@@ -131,7 +131,7 @@
                         </table>
                     </div>
 
-                    <div>
+                    <div class="example-box mt-4">
                         <h4>Como Fazer um Teste de Atributo:</h4>
                         <ol>
                             <li>Clique no atributo desejado no card do personagem</li>
@@ -140,7 +140,7 @@
                             <li>O resultado final será: d20 + bônus do atributo</li>
                         </ol>
 
-                        <div>
+                        <div class="example-calculation">
                             <p><strong>Exemplo:</strong></p>
                             <ul>
                                 <li>Força 16 (bônus +3)</li>
@@ -151,44 +151,44 @@
                     </div>
                 </div>
 
-                <div>
-                    <div>
-                        <div>💪</div>
+                <div class="attribute-explanation">
+                    <div class="attribute-card">
+                        <div class="attribute-icon">💪</div>
                         <div>
                             <h3>Força</h3>
                             <p>Determina o poder físico e capacidade de carregar peso</p>
                         </div>
                     </div>
-                    <div>
-                        <div>🏹</div>
+                    <div class="attribute-card">
+                        <div class="attribute-icon">🏹</div>
                         <div>
                             <h3>Destreza</h3>
                             <p>Afeta a agilidade e precisão</p>
                         </div>
                     </div>
-                    <div>
-                        <div>❤️</div>
+                    <div class="attribute-card">
+                        <div class="attribute-icon">❤️</div>
                         <div>
                             <h3>Constituição</h3>
                             <p>Define a saúde e resistência física</p>
                         </div>
                     </div>
-                    <div>
-                        <div>📚</div>
+                    <div class="attribute-card">
+                        <div class="attribute-icon">📚</div>
                         <div>
                             <h3>Inteligência</h3>
                             <p>Representa o conhecimento e raciocínio</p>
                         </div>
                     </div>
-                    <div>
-                        <div>🧘‍♂️</div>
+                    <div class="attribute-card">
+                        <div class="attribute-icon">🧘‍♂️</div>
                         <div>
                             <h3>Sabedoria</h3>
                             <p>Indica a intuição e percepção</p>
                         </div>
                     </div>
-                    <div>
-                        <div>🗣️</div>
+                    <div class="attribute-card">
+                        <div class="attribute-icon">🗣️</div>
                         <div>
                             <h3>Carisma</h3>
                             <p>Determina a força de personalidade</p>
@@ -196,13 +196,57 @@
                     </div>
                 </div>
 
-                <div>
+                <style>
+                    .info-box {
+                        background: rgba(44, 62, 80, 0.8);
+                        padding: 2rem;
+                        border-radius: 8px;
+                        margin: 1rem 0;
+                    }
+
+                    .bonus-table {
+                        margin: 1.5rem 0;
+                    }
+
+                    .table {
+                        background: rgba(52, 73, 94, 0.8);
+                        border-radius: 8px;
+                        overflow: hidden;
+                    }
+
+                    .table th, .table td {
+                        padding: 0.75rem;
+                        border-color: rgba(255,255,255,0.1);
+                    }
+
+                    .example-calculation {
+                        background: rgba(52, 73, 94, 0.5);
+                        padding: 1rem;
+                        border-radius: 6px;
+                        margin-top: 1rem;
+                    }
+
+                    .example-box {
+                        background: rgba(52, 73, 94, 0.3);
+                        padding: 1.5rem;
+                        border-radius: 6px;
+                    }
+
+                    code {
+                        background: rgba(0,0,0,0.2);
+                        padding: 0.2rem 0.4rem;
+                        border-radius: 4px;
+                        color: #e74c3c;
+                    }
+                </style>
+
+                <div class="warning-box">
                     <p><i class="fas fa-exclamation-triangle"></i> <strong>Atenção:</strong> Os atributos devem estar entre 1 e 20, sendo 10 o valor médio para um personagem comum.</p>
                 </div>
             </section>
 
             <!-- Combate -->
-            <section>
+            <section class="manual-section">
                 <h2><i class="fas fa-sword"></i> Sistema de Combate</h2>
                 
                 <h3>Estatísticas de Combate</h3>
@@ -213,13 +257,13 @@
                     <li><strong>Iniciativa:</strong> Determina a ordem de ação em combate</li>
                 </ul>
 
-                <div>
+                <div class="tip-box">
                     <p><i class="fas fa-shield-alt"></i> <strong>Dica de Combate:</strong> Balanceie bem seus pontos entre ataque e defesa para criar um personagem mais versátil.</p>
                 </div>
             </section>
 
             <!-- História -->
-            <section>
+            <section class="manual-section">
                 <h2><i class="fas fa-book-open"></i> Desenvolvimento da História</h2>
                 
                 <h3>Elementos Narrativos</h3>
@@ -231,7 +275,7 @@
                     <li>Fraquezas e medos</li>
                 </ul>
 
-                <div>
+                <div class="example-box">
                     <p><i class="fas fa-quote-right"></i> <strong>Exemplo de Background:</strong> "Um jovem mago que perdeu sua família para um dragão e agora busca conhecimento mágico para se vingar."</p>
                 </div>
             </section>
