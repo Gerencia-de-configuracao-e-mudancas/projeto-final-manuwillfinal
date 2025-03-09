@@ -47,7 +47,7 @@ O RPG Character Creator é uma aplicação web desenvolvida para facilitar a cri
 ### Como Executar
 1. Clone o repositório
 ```bash
-git clone https://github.com/seu-usuario/rpg-character-creator.git
+git clone https://github.com/Gerencia-de-configuracao-e-mudancas/projeto-final-manuwillfinal.git
 ```
 2. Abra o arquivo `index.html` em seu navegador
 
